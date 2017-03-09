@@ -17,12 +17,14 @@ angular.module('app').controller('optionOneCtrl', function($scope, $parse, $stat
           // for loop and store content on file
             for(let i = 0; i < $scope.folderFiles.length; i++) {
                 var fr = new FileReader();
+
                 fr.onload = function(){
                   $scope.strArray.push({content:this.result,name: $scope.folderFiles[i].name});
                 }
                 //this allows for filereader to extract content of file as a string,
                 //the result of readAsText is a string
-                fr.readAsText($scope.folderFiles[i],$scope.folderFiles[i].name);
+                //passed var i as an argument so I would have the value of i in the onload function
+                fr.readAsText($scope.folderFiles[i],i);
             }
             console.log($scope.folderFiles);
             console.log($scope.strArray);
