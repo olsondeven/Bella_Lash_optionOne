@@ -36,8 +36,8 @@ angular.module('app').controller('optionOneCtrl', function($scope, $state, $sce,
             //return the file name ? or display the file that has the phrase
             //if no input set phrase to "Find me"
             $scope.totalFiles = strArray.length;
-            if(!folderFiles || !strArray){
-              return swal('Please select a folder with txt files');
+            if(folderFiles.length === 0 || strArray.length === 0){
+              return swal('Please select a directory');
             }
             if (!phrase) {
                 phrase = 'Find me'

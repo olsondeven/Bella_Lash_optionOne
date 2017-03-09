@@ -36,7 +36,7 @@ gulp.task('build-css', () => {
 gulp.task('build-js', () => {
     return gulp.src(paths.jsSource)
         .pipe(plumber())
-        .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(sourcemaps.init())
         .pipe(print())
         .pipe(babel({presets: ["es2015"]}))
         .pipe(concat('bundle.js'))
