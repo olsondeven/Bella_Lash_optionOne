@@ -1,18 +1,19 @@
 <div class="optionone-wrapper">
   <h1>File Finder</h1>
   <form class="" action="index.html" method="post">
-    <p>Instructions: Please select a folder that has txt files(up to 100 files)</p>
+    <p><span>Instructions</span>: Select a folder that has txt files(up to 100 files)</p>
     <input type="file" id="openFile" webkitdirectory="" directory=""/>
-    <p>Instructions: Please select phrase that you would like found(default phrase:"Find me")</p>
+    <p><span>Instructions</span>: Select phrase that you would like find(default phrase:"Find me")</p>
     <input type="text" ng-model='userInput' maxlength="100" placeholder="Find me">
     <button type="button" name="button" ng-click="setPhrase(userInput)">Find Phrase</button>
+    <button type="button" name="button" ng-click="clear()">Clear Search</button>
   </form>
   <div ng-if="found" class="optionone-result">
     <div class="found-numbers"><span>{{foundFile.length}}</span> files out of <span>{{totalFiles}}</span> files</div>
     <button type="button" name="button" ng-click="clear()">Clear Search</button>
     <div class="file-preview" ng-repeat='file in foundFile'>
-      <h2>File Name: {{file.name}}</h2>
-      <p name="name" ng-bind-html="file.content"><span>help</span></p>
+      <h2>File Name: <span>{{file.name}}</span></h2>
+      <p name="name" ng-bind-html="file.content"></p>
     </div>
   </div>
   <div ng-if="!found" class="optionone-notfound">

@@ -1,7 +1,18 @@
-$textareabgcolor: #f0f0f0;
+$resultbgcolor: #C1B6B2;
 $softpurple: #74637f;
+$mainbgcolor: #EEE9E6;
+$inputbordercolor: black;
+$titlefont: "Anton", sans-serif;
+$instructions: "Asap", sans-serif;
+$mainfont: "Slabo 27px",sans-serif;
+$instcolor: #C97149;
+$titlecolor: #59898D;
+$countgreen: #575F40;
+$filenamecolor: #B0D1DA;
 body {
+  font-family: $mainfont;
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  background-color: $mainbgcolor;
 }
