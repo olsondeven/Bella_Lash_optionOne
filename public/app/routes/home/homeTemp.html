@@ -8,12 +8,15 @@
     <button type="button" name="button" ng-click="setPhrase(userInput)">Find Phrase</button>
   </form>
   <div ng-if="found" class="optionone-result">
+    <div class="found-numbers"><span>{{foundFile.length}}</span> files out of <span>{{totalFiles}}</span> files</div>
+    <button type="button" name="button" ng-click="clear()">Clear Search</button>
     <div class="file-preview" ng-repeat='file in foundFile'>
       <h2>File Name: {{file.name}}</h2>
-      <textarea name="name">{{file.content}}</textarea>
+      <p name="name" ng-bind-html="file.content"><span>help</span></p>
     </div>
   </div>
   <div ng-if="!found" class="optionone-notfound">
+    <div class="found-numbers"><span>{{foundFile.length}}</span> files found out of <span>{{totalFiles}}</span> files</div>
     <h1>File not found</h1>
   </div>
 </div>
