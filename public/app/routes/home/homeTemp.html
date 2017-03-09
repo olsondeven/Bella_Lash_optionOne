@@ -4,8 +4,13 @@
     <p>Instructions: Please select a folder that has txt files(up to 100 files)</p>
     <input type="file" id="openFile" webkitdirectory="" directory="" placeholder="Select a folder with .txt files"/>
     <p>Instructions: Please select phrase that you would like found(default: phrase is "Find me")</p>
-    <input type="text" ng-model='userInput'>
-    <button type="button" name="button" ng-click="" placeholder="Find me">Find Phrase</button>
+    <input type="text" ng-model='userInput' maxlength="100" placeholder="Find me">
+    <button type="button" name="button" ng-click="setPhrase(userInput)">Find Phrase</button>
   </form>
-
+  <div class="optionone-result">
+    <div class="file-preview">
+      <h2>File Name</h2>
+      <textarea name="name">Text</textarea>
+    </div>
+  </div>
 </div>

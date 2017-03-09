@@ -1,9 +1,8 @@
 angular.module('app').controller('optionOneCtrl', function($scope, $parse, $stateParams, mainService, $rootScope) {
   //Declare "variables" $scope properties/keys, this will allow me to display them
         $scope.folderFiles = null;
-        $scope.strArray = new Array;
-        $scope.foundFile = null;
-        var phrase = "";
+        $scope.strArray = null;
+        $scope.foundFile = new Array;
         // vanilla javascript to grab the folder with 100 files in it
         // create input box that takes in folder
         // eventlistener for when the files have been uploaded
@@ -24,7 +23,14 @@ angular.module('app').controller('optionOneCtrl', function($scope, $parse, $stat
             console.log($scope.strArray);
             //is the phrase case sensitive
             //return the file name ? or display the file that has the phrase
-            
-        });
+        });//end of upload
+
+        //set phrase from user function, takes in a string and matches any files that
+        //have that string
+        $scope.setPhrase = function(phrase){
+
+          console.log('SetPhrase fn fired',phrase);
+
+        }
 
     }) //closing
