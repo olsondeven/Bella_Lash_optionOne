@@ -1,1 +1,16 @@
 @import '../styles';
+.optionone-wrapper{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  form{
+    justify-content: center;
+    align-items: center;
+    input{
+      border: 1px solid rgb(154, 154, 154);
+    }
+  }
+}

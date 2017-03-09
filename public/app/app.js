@@ -4,10 +4,10 @@ angular.module('app', ['ui.router'])
   //default router
   //home page and landing page
   $stateProvider
-  .state('home', {
+  .state('optionOne', {
     url: '/',
     templateUrl: './app/routes/home/homeTemp.html',
-    controller: 'homeCtrl'
+    controller: 'optionOneCtrl'
   });
 
   $urlRouterProvider.otherwise('/');

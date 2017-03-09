@@ -1,4 +1,4 @@
-angular.module('app').controller('homeCtrl', function($scope, $parse, $stateParams, mainService, $rootScope) {
+angular.module('app').controller('optionOneCtrl', function($scope, $parse, $stateParams, mainService, $rootScope) {
   //Declare "variables" $scope properties/keys, this will allow me to display them
         $scope.folderFiles = null;
         $scope.strArray = new Array;
@@ -22,6 +22,9 @@ angular.module('app').controller('homeCtrl', function($scope, $parse, $statePara
             }
             console.log($scope.folderFiles);
             console.log($scope.strArray);
+            //is the phrase case sensitive
+            //return the file name ? or display the file that has the phrase
+            
         });
 
     }) //closing
