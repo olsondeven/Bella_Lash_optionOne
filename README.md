@@ -1,7 +1,7 @@
 # Option_One
 
-This is the answer to the coding challenge issued by Bella Lash. I was asked to select one out of four options. Option one is what I decided you go with. The reason I felt compelled to
-choose option one is because of the problem. In my previous coding experience I have not needed to uploaded or read through files on the clients side(local files).
+Attached (or below or Here) is the answer to the coding challenge issued by Bella Lash. I was asked to select one of four options. I decided to choose option one. The reason I felt compelled to
+choose option one is due to it type of problem. In my previous coding experience I have not needed to upload or read through files on the client's side(local files).
 
 ###Option 1-
 
@@ -14,18 +14,19 @@ install of all dependencies you will need to run gulp. (for shipping reasons I h
 
 ##Landing Page
 
-The title that I have given this project is File Finder. First you will want to create some test txt files. Included is a folder that contains 9 txt files and three of these files
-have the text "Find me". Second you will want to click the choose file button/input box. The application is programmed to take a folder/directory of files(1-100 files). Once uploaded you can either select your own
-phrase by writing it into the provided input box or you can just press "Find Phrase" button. If pressed without entering a specific phrase the default phrase is "Find me". Now the magic starts, the application
-will read through all the files and find any matches. These matches will be displayed in the middle of the screen. The text and file name will be shown for each individual file that contains a match.
-I have also allowed the select phrase to be highlighted in green. If the user is finished with that query there is a clear button in the middle right of the page or near the find phrase button. If you are
-wondering how many files were matched? There is a count of those files in the middle right of the page.
+The title that I have given this project is File Finder. First, you will want to create some test txt files. Included is a folder that contains 9 txt files and three of these files
+have the text "Find me". Second, you will want to click the choose file button/input box. The application is programmed to take a folder/directory of files(1-100 files). Once uploaded you can either select your
+own phrase by writing it into the provided input box or you can just press "Find Phrase" button. If pressed without entering a specific phrase, the default phrase is "Find me". Now the magic starts, the
+application will read through all the files and find any matches. These matches will be displayed in the middle of the screen. The text and file name will be shown for each individual file that contains a match.
+I have also allowed the select phrase to be highlighted in green. If the user is finished with that query there is a clear button in the middle right of the page or near the find phrase button. If you want to
+know how many files were matched, there is a count of those files in the middle right of the page.
 
 ##Fun Points
 
 ###Reading through files
 I was able to learn how to upload files to my application. Then after uploading the necessary files I was given the chance to learn how to read through these files. Vanilla JavaScript seemed to be the best
-option for me. I researched ways to upload data using AngularJS and JQuery. These seemed like ok options but I felt that JavaScript's built in uploader was efficient enough. The solution to this problem in my
+option for me. I researched ways to upload data using AngularJS and JQuery. These seemed like OK options, but I felt that JavaScript's built-in uploader was efficient enough. The solution to this problem in my
+
 application was an event listener on an input element(type=file). The listener looks for any changes and when changes happen it uploads the selected folder containing the target files. Then the event listener
 creates a new FileReader. FileReader is necessary for its ability to read through files. This is how I scrapped each individual file's content and stored it as a property/key on an object. FileReader has two
 two methods that help with this. They are readAsBinaryString() and readAsText(). The method I used was readAsText() because readAsBinaryString() has not been standardized. This is according to
