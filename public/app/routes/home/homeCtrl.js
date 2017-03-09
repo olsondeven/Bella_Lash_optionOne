@@ -35,20 +35,24 @@ angular.module('app').controller('optionOneCtrl', function($scope, $parse, $stat
           //questions to ask Bruno
           //is the phrase case sensitive
           //return the file name ? or display the file that has the phrase
-          let regPhrase = phrase;
-          if(regPhrase === ""){
-            regPhrase = 'Find me';
+          //if no input set phrase to "Find me"
+          if(!phrase){
+            phrase = 'Find me'
           }
           strArray.forEach(function(element,index){
-            if(element.content.match() > 0){
+            var regPhrase = new RegExp(phrase);
+            if(element.content.search(regPhrase) != -1){
               $scope.foundFile.push(element);
               $scope.found = true;
             }
           });
-          console.log('SetPhrase fn fired',phrase);
-          console.log(folderFiles);
-          console.log(strArray);
+          // console.log('SetPhrase fn fired',phrase);
+          // console.log(folderFiles);
+          // console.log(strArray);
+          // console.log($scope.foundFile);
 
+          //clear out everything but $scope.foundFile
+          
         };
 
     }) //closing
