@@ -4,9 +4,10 @@ import sass from 'gulp-sass'; //sass compiling/translating
 import babel from 'gulp-babel'; //es6 translating
 import plumber from 'gulp-plumber'; //gives errors for compiling
 import sourcemaps from 'gulp-sourcemaps';
+import rename from 'gulp-rename';
 import del from 'del';
 import print from 'gulp-print';
-import uglify from 'gulp-uglify'
+import uglify from 'gulp-uglify';
 import CacheBuster from "gulp-cachebust";
 var cachebust = new CacheBuster();
 
@@ -35,11 +36,14 @@ gulp.task('build-css', () => {
 gulp.task('build-js', () => {
     return gulp.src(paths.jsSource)
         .pipe(plumber())
-        .pipe(sourcemaps.init())
+        .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(print())
         .pipe(babel({presets: ["es2015"]}))
         .pipe(concat('bundle.js'))
-        // .pipe(uglify())  //keep commented out until ready to ship
+        //.pipe(sourcemaps.write("./"))
+        //.pipe(gulp.dest(paths.jsDest))
+        //.pipe(rename('bundle.min.js'))
+        //.pipe(uglify())  //keep commented out until ready to ship
         .pipe(sourcemaps.write("./"))
         .pipe(gulp.dest(paths.jsDest));
 });
