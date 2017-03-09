@@ -1,7 +1,7 @@
 @import '../styles';
 .optionone-wrapper{
   width: 100vw;
-  height: 100vh;
+  // height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,14 +19,13 @@
   .optionone-result{
     position: relative;
     width: 90%;
-    height: 70%;
+    height: 100%;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: $textareabgcolor;
-    overflow-y: scroll;
     .found-numbers{
       position: absolute;
       top: 10px;
@@ -40,7 +39,7 @@
     }
     .file-preview{
       width: 70%;
-      height: 30%;
+      height: 500px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -65,7 +64,7 @@
   .optionone-notfound{
     position: relative;
     width: 90%;
-    height: 70%;
+    height: 70vh;
     margin-top: 20px;
     display: flex;
     justify-content: center;

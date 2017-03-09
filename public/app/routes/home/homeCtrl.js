@@ -9,15 +9,22 @@ angular.module('app').controller('optionOneCtrl', function($scope, $sce, $parse,
         // create input box that takes in folder
         // eventlistener for when the files have been uploaded
         document.getElementById("openFile").addEventListener('change', function() {
-            // Set values to correct values
+          //clear function, sets everything to zero
+          $scope.clear = function(){
+            folderFiles = [];
             strArray = [];
             $scope.foundFile = [];
             $scope.found = false;
+            $scope.totalFiles = 0;
+            $scope.userInput = "";
+            fr.abort();
+          };
+            // Set values to correct values
             folderFiles = this.files;
             $scope.totalFiles = this.files.length;
             // for loop and store content on file
             for (let i = 0; i < folderFiles.length; i++) {
-                var fr = new FileReader();
+              var fr = new FileReader();
 
                 fr.onload = function() {
                         strArray.push({
@@ -46,21 +53,11 @@ angular.module('app').controller('optionOneCtrl', function($scope, $sce, $parse,
                 var regPhrase = new RegExp(phrase);
                 var regHighlight = new RegExp(phrase, "g");
                 if (element.content.search(regPhrase) != -1) {
-                  //allows searched word to be highlighted
+                    //allows searched word to be highlighted
                     element.content = $sce.trustAsHtml(element.content.replace(regHighlight, `<span>${phrase}</span>`));
                     $scope.foundFile.push(element);
                     $scope.found = true;
                 }
             });
         };
-
-        //clear function, sets everything to zero
-        $scope.clear = ()=>{
-          let folderFiles = [];
-          let strArray = [];
-          $scope.foundFile = [];
-          $scope.found = false;
-          $scope.totalFiles = 0;
-        };
-
-    }) //closing
+  }); //closing
